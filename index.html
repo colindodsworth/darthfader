@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>DarthFader.gq :: YouTube Crossfader</title>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src='https://www.youtube.com/iframe_api'></script>
+    <link rel="stylesheet" type="text/css"  href="https://fonts.googleapis.com/css?family=Oswald">
+    <style>
+      body {
+        font-family: 'Oswald', sans-serif;
+        /*text-transform: uppercase;*/
+      }
+    </style>
+</head>
+
+
+<body style="background-color:black;">
+  <div ng-app="YouTubeApp" ng-controller="YouTubeController">
+    <h1></h1>
+                    <center><img src="darthfaderlogoweb5.png" alt="DarthFader.com"></center>
+
+<!-- SLIDER: -->
+        <div class="large-12 columns">
+            <br><br>
+            <div id="crossfade" style="width:260px; margin:auto"></div>
+            <br><br>
+            <div id="playbackRate" style="width:260px; margin:auto"></div>
+        </div>
+
+<!-- SLIDER AngualrJS: -->
+            <rzslider rz-slider-model="slider.value"
+              rz-slider-options="slider.options"></rzslider>
+
+
+<!-- left player: -->
+    <div class="left">
+        <div>
+            <div id="ytplayer1" class="ytplayer"></div>
+            <input type="text" id="keyword" class="form-control" ng-model="term1" />
+            <input type="image"  align="center"  src="./searchbutton.png" ng-click="fetchData1();" />
+<!-- left volume:  -->
+<!--             <button ng-click="up('ytplayer1');">+</button>
+            <button ng-click="down('ytplayer1');">-</button> -->
+<!-- left search results: -->
+            <div class="video-list">
+                <div ng-repeat="video in leftVideos">
+                    <a href="#" ng-click="loadVideoLeft($event, video.id.videoId);"><img ng-src="{{ video.snippet.thumbnails.default.url }}" />
+                    <p>{{ video.snippet.title }}:
+                    {{ video.snippet.description }}</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- right player: -->
+    <div class="right">
+        <div>
+            <div id="ytplayer2" class="ytplayer"></div>
+            <input type="text" id="keyword" class="form-control" ng-model="term2" />
+            <input type="image"  align="center"  src="./searchbutton.png" ng-click="fetchData2();" />
+<!-- right volume:  -->
+<!--             <button ng-click="up('ytplayer2');">+</button>
+            <button ng-click="down('ytplayer2');">-</button> -->
+<!-- right search results: -->
+            <div class="video-list">
+                <div ng-repeat="video in rightVideos">
+                    <a href="#" ng-load="loadVideoRight($event, video.id.videoId);"><img ng-src="{{ video.snippet.thumbnails.default.url }}" />
+                    <p>{{ video.snippet.title }}:
+                    {{ video.snippet.description }}</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>
+  <!-- <footer align="center"><a href="http://www.makefuntime.com"><img src="MAKEFUN.png" width="99" alt="www.MAKEFUNtime.com"></a> -->
+  <footer align="center">brought to you by <a href="http://www.makefuntime.com"><img src="MAKEFUN.png" width="120" alt="www.MAKEFUNtime.com"></a> see more stuff at <a href="http://www.makefuntime.com">makefuntime.com</a>
+  <br><br>
+</footer>
+
+</html>

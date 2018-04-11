@@ -1,0 +1,74 @@
+a:link, a:visited {
+  color: #ffcd00;
+}
+a:hover, a:active {
+  color: #e2b908;
+}
+
+
+body {
+  color: white;
+  margin: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+/*  text-transform: uppercase;*/
+}
+
+/*p.uppercase {
+    text-transform: uppercase;
+*/
+
+.ui-slider .ui-slider-handle{
+    outline: 0;
+    width: 63px;
+    height: 103px;
+    background:url(http://i.imgur.com/jMwNrXt.png) no-repeat; overflow: hidden;
+    top: -50px;
+    margin-left: -30px;
+    border-style:none;
+}
+
+
+#ytplayer1, #ytplayer2 {
+    height: 250px;
+    margin: 5px 0px 5px 0px;
+    background-color: #EEE;
+}
+
+.form-control {
+  width: 300px;
+  display: inline-block;
+}
+
+.left, .right {
+    width: 50%;
+/*    border: solid 1px #CCC;*/
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0px;
+    min-height: 200px;
+    vertical-align: top;
+}
+
+.left > div, .right > div {
+    margin: 10px;
+}
+
+.video-list img {
+    display: inline-block;
+}
+.video-list p {
+    display: inline-block;
+    width: calc(100% - 130px);
+    vertical-align: top;
+}
+.video-list div {
+    background-color: #191919;
+    padding: 5px;
+    margin: 0px 0px 0px 0px;
+    border-bottom: solid 6px #000;
+}
